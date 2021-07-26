@@ -1,0 +1,2093 @@
+@import 'reset'
+
+// General
+body
+    font-family: 'Nunito', sans-serif
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    image-rendering: pixelated
+
+// Colores
+$brown: #3F190E
+$lemon: #D4DE0C
+$gray: #4D4D4D
+$DarkGray: #2A2A2A
+$babyBlue: #F6F9F8
+$lightRed: #E4D3CA
+$lightGreen: #D6E4CA
+
+$green: #92CA3C
+$black: #000000
+$gold: #E2AC38
+$darkBlue: #0E0B27
+$gray: #808080
+$white: #ffffff
+
+.color-brown
+    color: $brown
+.color-lemon
+    color: $lemon
+.color-gray
+    color: $gray
+.color-white
+    color: white
+.color-gold
+    color: $gold
+.background-gray
+    background-color: $gray
+.background-brown
+    background-color: $brown
+.background-lemon
+    // background-color: $lemon
+    background-color: $green
+
+// Tipografía
+.sans
+    font-family: 'Nunito', sans-serif
+.script
+    font-family: 'Pacifico', cursive
+.regular
+    font-weight: 400
+.semi-bold
+    font-weight: 600
+.bold
+    font-weight: 700
+.extra-bold
+    font-weight: 800
+@mixin font-sans
+    font-family: 'Nunito', sans-serif
+@mixin font-script
+    font-family: 'Pacifico', cursive
+@mixin font-regular
+    font-weight: 400
+@mixin font-semi-bold
+    font-weight: 600
+@mixin font-bold
+    font-weight: 700
+@mixin extra-bold
+    font-weight: 800
+strong
+    font-weight: 700
+
+.title
+    font-size: 18px
+    // text-transform: uppercase
+    // letter-spacing: 0.05em
+    color: $black
+    @include extra-bold
+
+.pd-lr
+    padding: 
+        left: 24px
+        right: 24px
+
+@media (min-width: 768px)
+    .pd-lr
+        padding:
+            left: 36px
+            right: 36px
+
+@media (min-width: 990px)
+    .pd-lr
+        padding:
+            left: 54px
+            right: 54px
+
+@media (min-width: 1200px)
+    .pd-lr
+        padding:
+            left: 78px
+            right: 78px
+
+@media (min-width: 1400px)
+    .pd-lr
+        margin: 
+            left: auto
+            right: auto
+        max-width: 1100px
+        padding:
+            left: 0
+            right: 0
+
+.pd-t
+    padding:
+        top: 48px
+
+@media (min-width: 768px)
+    .pd-t
+        padding:
+            top: 68px
+
+@media (min-width: 1200px)
+    .pd-t
+        padding:
+            top: 78px
+            top: 84px
+
+@keyframes appear
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+
+// COMPONENTS
+input, textarea, button, select
+    @include font-sans
+
+select
+    // border-radius: 36px
+    border-radius: 4px
+    box-sizing: border-box
+    background-color: transparent
+    border: solid 1px rgba($gray, 0.5)
+    padding: 9px 15px
+    position: relative
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    background-image: url('../img/arrow-down-icon.svg')
+    background-repeat: no-repeat
+    background-position: 94% 50%
+    cursor: pointer
+
+input
+    // -webkit-appearance: none
+    // appearance: none
+    font-size: 15px
+    // border-radius: 36px
+    border-radius: 3px
+    border: solid 1px rgba($gray, 0.5)
+    background-color: transparent
+    padding: 9px 15px
+    outline: none
+    box-shadow: none
+    box-sizing: border-box
+
+textarea
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    padding: 9px 15px
+    background-color: transparent
+    border: solid 1px rgba($gray, 0.5)
+
+button
+    text-align: center
+    border-radius: 46px
+    border-radius: 4px
+    padding: 14px 0
+    font-size: 15px
+    @include font-semi-bold
+
+.message
+    background-color: transparent
+    border: solid 1px $gold
+    padding: 20px 21px
+    border-radius: 4px
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    margin-bottom: 29px
+    img
+        width: 34px
+    p
+        width: 81%
+        line-height: 130%
+        font-size: 15px
+        color: $gold
+        strong
+            @include font-bold
+    &.message-resume
+        background-color: $lightGreen
+        margin-top: 20px
+        margin-bottom: 0
+        p
+            color:#0E3F19
+
+@media (min-width: 768px)
+    .message
+        padding: 20px 24px
+        img
+        p
+            width: 86%
+            strong
+        &.message-resume
+            p
+
+.header-section
+    display: flex
+    flex-wrap: wrap
+    width: 100%
+    justify-content: space-between
+    box-sizing: border-box
+    h3
+        margin-bottom: 23px
+    select
+        width: 100%
+        margin-bottom: 26px
+
+@media (min-width: 768px)
+    .header-section
+        align-items: center
+        h3
+        select
+            width: 240px
+
+// main Slider
+.slider-wrapper
+    z-index: 1
+    position: relative
+    border-bottom: solid 5px $green
+    .splide
+        .splide__track
+            .splide__list
+                .splide__slide
+                    width: 100%
+                    padding-top: 146.88 / 409 * 100%
+                    height: 0
+                    background-color: $green
+                    background-repeat: no-repeat
+                    background-position: center
+                    background-size: cover
+
+@media (min-width: 768px)
+    .slider-wrapper
+        .splide
+            .splide__track
+                .splide__list
+                    .splide__slide
+                        padding-top: 158.67 / 1280 * 100%
+
+@media (min-width: 990px)
+    .slider-wrapper
+        margin-bottom: 10px
+        .splide
+            .splide__track
+                .splide__list
+                    .splide__slide
+
+.center-column-wrapper
+    position: relative
+    padding-bottom: 100px
+    // &::before
+    //     position: absolute
+    //     content: ''
+    //     width: 100%
+    //     height: 260px
+    //     top: -80px
+    //     background-image: url('../img/back-icons.png')
+    //     background-size: cover
+    //     background-position: center
+    //     z-index: -1
+    &.back-light
+        &::after
+            position: absolute
+            content: ''
+            width: 100%
+            height: 100%
+            top: 0
+            left: 0
+            right: 0
+            z-index: -2
+            background-color: $babyBlue
+        &.back-light-x
+            &:after
+                height: 100%
+    .center-column
+        .header
+            margin-bottom: 28px
+            .title
+                text-align: center
+        .body
+            h3
+                font-family: 'Pacifico', cursive
+                color: $black
+                font-size: 28px
+                // line-height: 160%
+                line-height: 150%
+                text-align: center
+                margin:
+                    left: 7vw
+                    right: 7vw
+                    // bottom: 48px
+                    bottom: 24px
+                    // bottom: 36px
+            p
+                color: $gray
+                line-height: 160%
+                font-size: 16px
+                margin-bottom: 40px
+                &.sp-p
+                    a
+                        color: $black
+            img
+                width: 100%
+                margin-bottom: 36px
+            .form-item
+                margin-bottom: 23px
+                p
+                    margin-bottom: 7px
+                    color: $gray
+                    font-size: 15px
+                input
+                    width: 100%
+                    box-sizing: border-box
+                    -webkit-appearance: none
+                    -moz-appearance: none
+                    appearance: none
+                textarea        
+                    box-sizing: border-box
+                    width: 100%
+                    height: 130px
+                    border-radius: 4px
+            button
+                margin-top: -6px
+                width: 100%
+                color: $white
+                font-weight: 700
+            .grid
+                display: flex
+                flex-wrap: wrap
+                .col-12
+                    width: 100%
+                .col-6
+                    width: 100%
+    .fake-gallery
+        overflow: hidden
+        display: flex
+        justify-content: center
+        margin-bottom: 40px
+        img
+            width: 50%
+            height: 100%
+            margin: 0 8px
+    
+@media (min-width: 768px)
+    .center-column-wrapper
+        &.back-light
+            &.back-light-x
+                &:after
+                    // height: 140vh
+                    // height: 1400px
+        .center-column
+            margin:
+                left: auto
+                right: auto
+            max-width: 550px
+            padding:
+                left: 0
+                right: 0
+            .header
+                .title
+            .body
+                p
+                img
+                    margin-bottom: 38px
+                .form-item
+                    p
+                    input
+                    textarea
+                button
+                .grid
+                    .col-12
+                    .col-6
+                        width: 50%
+        .fake-gallery
+            margin-top: 54px
+            margin-bottom: 50px
+            img
+    
+@media (min-width: 1200px)
+    .center-column-wrapper
+        &.back-light
+            &.back-light-x
+                &:after
+                    // height: 1010px
+        .center-column
+            max-width: 660px
+            .header
+                margin-bottom: 36px
+                .title
+            .body
+                h3
+                    font-size: 30px
+                    line-height: 140%
+                    margin:
+                        bottom: 32px
+                p.sp-p
+                    box-sizing: border-box
+                    margin:
+                        left: 76px
+                        right: 76px
+                        // bottom: 54px
+                        bottom: 56px
+                img
+                    // margin-bottom: 60px
+                    margin-bottom: 62px
+                .form-item
+                    p
+                    input
+                    textarea
+                button
+        .fake-gallery
+            margin: 60px 0 62px
+            img
+                width: 40%
+                margin: 0 12px
+    
+@media (min-width: 1440px)
+    .center-column-wrapper
+        &.back-light
+            &.back-light-x
+                &:after
+                    // height: 1080px
+        .center-column
+            .header
+                .title
+            .body
+                h3
+                p.sp-p
+                img
+                .form-item
+                    p
+                    input
+                    textarea
+                button
+        .fake-gallery
+            img
+
+// Header
+header
+    background-color: $black
+    position: relative
+    z-index: 999
+    .header-inner
+        display: flex
+        justify-content: space-between
+        align-items: center
+        flex-wrap: wrap
+        z-index: 1
+        padding: 
+            top: 4px
+            left: 22px
+            right: 22px
+        height: 66px
+        transition: all ease-in 0.3s
+        .burger-wrapper
+            width: 25px
+            height: 25px
+            padding-bottom: 26px
+            cursor: pointer
+            .burger
+                width: 25px
+                height: 2px
+                background-color: $white
+                position: relative
+                border-radius: 2px
+                padding: 0
+                font-size: inherit
+                @include font-regular
+                &::before
+                    transition: all ease 0.3s
+                    position: absolute
+                    content: ''
+                    width: 100%
+                    height: 2px
+                    background-color: $white
+                    left: 0
+                    right: 0
+                    margin: auto
+                    top: -7px
+                &::after
+                    transition: all ease 0.3s
+                    position: absolute
+                    content: ''
+                    width: 100%
+                    height: 2px
+                    background-color: $white
+                    left: 0
+                    right: 0
+                    margin: auto
+                    bottom: -7px
+            &.toggled
+                .burger
+                    background-color: transparent
+                    &::before
+                        transform: rotate(-45deg) translateY(4px) translateX(-6px)
+                    &::after
+                        transform: rotate(45deg) translateY(-4px) translateX(-6px)
+        .brand
+            margin: auto
+            z-index: 99
+            a
+                color: $white
+                transition: all ease 0.3s                
+                img
+                    width: 100px
+        .cart
+            // padding-bottom: 26px
+            padding-bottom: 20px
+            a
+                position: relative
+                span
+                    position: absolute
+                    background-color: $gold
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    width: 16px
+                    height: 16px
+                    top: -13px
+                    right: -6px
+                    font-size: 12px
+                    border-radius: 100%
+                img,
+                svg
+                    width: 30px
+                    fill: $white
+                &:focus
+                    color: $gray
+        .main-menu
+            width: 100%
+            height: 0
+            overflow: hidden
+            margin-bottom: 24px
+            opacity: 0
+            transition: all ease-in 0.5s
+            a
+                color: $white
+                display: block
+                margin-bottom: 20px
+                margin-bottom: 18px
+                opacity: 1
+                @include font-semi-bold
+                transition: all ease-in 0.2s
+                &:last-child
+                    margin-bottom: 0
+                &:hover,
+                &:focus
+                    color: $green
+            &.open
+                height: auto
+                opacity: 1
+        .rr-ss
+            width: 100%
+            height: 0
+            overflow: hidden
+            margin-bottom: 24px
+            opacity: 0
+            transition: all ease-in 0.5s
+            a
+                margin-right: 16px
+                img
+                svg
+                    fill: $white
+                    transition: all ease 0.3s
+                    &:hover,
+                    &:focus
+                        fill: $green
+            &.open
+                height: auto
+                opacity: 1
+        .sign
+            width: 100%
+            height: 0
+            overflow: hidden
+            opacity: 0
+            display: none
+            padding-bottom: 22px
+            transition: all ease-in 0.5s
+            a
+                color: $white
+                @include font-semi-bold
+                cursor: pointer
+                transition: all ease-in 0.3s
+                &:hover,
+                &:focus
+                    color: $green
+            .logout
+                a
+                    color: $white
+            &.open
+                display: flex
+                justify-content: space-between
+                height: auto
+                opacity: 0
+                animation: appear 0.3s forwards
+                animation-delay: 0.3s
+        &.open
+            height: 296px
+
+@media (min-width: 500px)
+    header
+        &::before
+            bottom: -25px
+
+@media (min-width: 768px)
+    header
+       .header-inner
+            padding: 
+                left: 36px
+                right: 36px
+            .burger-wrapper
+                .burger
+                    &::before
+                    &::after
+                &.toggled
+                    .burger
+                        &::before
+                        &::after
+            .brand
+                a
+                    img
+                        width: 110px
+            .cart
+                a
+                    span
+                    img
+            .main-menu
+                a
+                    &:last-child
+                &.open
+            .rr-ss
+                a
+                    img
+                &.open
+            .sign
+                a
+                .logout
+                    a
+                &.open
+            &.open
+
+@media (min-width: 990px)
+    header
+        .header-inner
+            height: auto
+            flex-wrap: nowrap
+            height: 100px
+            padding: 
+                left: 54px
+                right: 54px
+            .burger-wrapper
+                display: none
+                .burger
+                    &::before
+                    &::after
+                &.toggled
+                    .burger
+                        &::before
+                        &::after
+            .brand
+                width: 10%
+                order: 2
+                padding-top: 4px
+                display: flex
+                justify-content: center
+                a
+                    img
+                        width: 130px
+            .cart
+                width: 5%
+                order: 5
+                padding-bottom: 0
+                text-align: right
+                a
+                    span
+                    img
+            .main-menu
+                order: 1
+                width: 45%
+                height: auto
+                opacity: 1
+                margin-bottom: 0
+                a
+                    margin-bottom: 0
+                    margin-right: 42px
+                    display: inline-block
+                    &:last-child
+                &.open
+            .rr-ss
+                width: 40%
+                order: 3
+                height: auto
+                opacity: 1
+                margin-bottom: 0
+                text-align: right
+                a
+                    img
+                &.open
+            .sign
+                // width: 7.5%
+                width: 10%
+                order: 4
+                height: auto
+                opacity: 1
+                padding-bottom: 0
+                text-align: center
+                // display: inherit
+                display: inline-block
+                a
+                .logout
+                    display: none
+                    a
+                &.open
+            &.open
+
+@media (min-width: 1200px)
+    header
+        .header-inner
+            height: 90px
+            padding: 
+                top: 12px
+                left: 78px
+                right: 78px
+            .burger-wrapper
+                .burger
+                    &::before
+                    &::after
+                &.toggled
+                    .burger
+                        &::before
+                        &::after
+            .brand
+                padding-top: 0
+                margin-top: -6px
+                a
+                    img
+                        width: 140px
+            .cart
+                a
+                    span
+                    img
+            .main-menu
+                a
+                    &:last-child
+                &.open
+            .rr-ss
+                a
+                    img
+                &.open
+            .sign
+                a
+                .logout
+                    a
+                &.open
+            &.open
+
+@media (min-width: 1400px)
+    header
+        &::before
+        .header-inner
+            margin:
+                left: auto
+                right: auto
+            padding: 
+                left: 0
+                right: 0
+            max-width: 1100px
+            .burger-wrapper
+                .burger
+                    &::before
+                    &::after
+                &.toggled
+                    .burger
+                        &::before
+                        &::after
+            .brand
+                a
+                    img
+            .cart
+                a
+                    span
+                    img
+            .main-menu
+                a
+                    &:last-child
+                &.open
+            .rr-ss
+                a
+                    img
+                &.open
+            .sign
+                a
+                .logout
+                    a
+                &.open
+            &.open
+
+@media (min-width: 1600px)
+    header
+
+// Tienda (index)
+.shop-wrapper
+    .shop
+        padding: 
+            top: 36px
+        .header-section
+            select
+                font-size: 15px
+        .categories
+            .splide
+                margin-bottom: 30px
+                margin-left: auto
+                margin-right: auto
+                padding:
+                    left: 20px
+                    right: 20px
+                .splide__track
+                    .splide__list
+                        box-sizing: border-box
+                        .splide__slide
+                            box-sizing: border-box
+                            .splide__banner
+                                height: 21.85vw
+                                margin: 0 6px
+                                background-color: $lemon
+                                background-position: center
+                                background-repeat: no-repeat
+                                background-size: cover
+                                border-radius: 3px
+                                position: relative
+                                display: flex
+                                padding: 12px 12px
+                                box-sizing: border-box
+                                align-items: flex-end
+                                overflow: hidden
+                                &:before
+                                    content: ''
+                                    position: absolute
+                                    width: 100%
+                                    height: 100%
+                                    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%)
+                                    top: 0
+                                    left: 0
+                                    right: 0
+                                    bottom: 0
+                                    z-index: 1
+                                p
+                                    z-index: 2
+                                    position: relative
+                                    color: white
+                                    @include font-bold
+                                    
+                .splide__arrows
+                    .splide__arrow
+                        background-color: transparent
+                        width: 1em
+                        height: 1em
+                        &.splide__arrow--prev
+                            left: 0.5em
+                        &.splide__arrow--next
+                            right: 0.5em
+        .items
+            padding-bottom: 40px
+            .item
+                display: block
+                margin-bottom: 46px
+                &:last-child
+                    margin-bottom: 0
+                .img
+                    width: 100%
+                    height: 0
+                    padding-top: 1 / 1 * 100%
+                    background-color: $green
+                    background-position: center
+                    background-repeat: no-repeat
+                    background-size: cover
+                    border-radius: 3px
+                    margin-bottom: 16px
+                .data
+                    .name
+                        font-size: 16px
+                        margin-bottom: 6px
+                        color: $gray
+                        @include font-bold
+                    .price
+                        font-size: 16px
+                        color: $black
+                &:hover,
+                &:focus
+                    .img
+
+@media (min-width: 768px)
+    .shop-wrapper
+        .shop
+            .header-section
+            .categories
+                .splide
+                    padding:
+                        left: 30px
+                        right: 30px
+                    .splide__track
+                        .splide__list
+                            .splide__slide
+                                .splide__banner
+                                    height: 10.7vw
+                                    margin: 0 8px
+                                    padding: 18px 20px
+                                    &:before
+                                    p
+                                        
+                    .splide__arrows
+                        .splide__arrow
+                            &.splide__arrow--prev
+                            &.splide__arrow--next
+            .items
+                display: flex
+                justify-content: flex-start
+                flex-wrap: wrap
+                box-sizing: border-box
+                .item
+                    width: 48.5%
+                    &:last-child
+                        margin-bottom: inherit
+                    &:nth-child(2n)
+                        margin-left: 3%
+                    .img
+                    .data
+                        .name
+                        .price
+
+@media (min-width: 900px)
+    .shop-wrapper
+        .shop
+            .header-section
+            .categories
+                .splide
+                    margin-bottom: 36px
+                    padding:
+                        left: 40px
+                        right: 40px
+                    .splide__track
+                        .splide__list
+                            .splide__slide
+                                .splide__banner
+                                    margin: 0 8px
+                                    padding: 16px
+                                    height: 6.85vw
+                                    &:before
+                                    p
+                                        
+                    .splide__arrows
+                        .splide__arrow
+                            width: 1.2em
+                            height: 1.2em
+                            &.splide__arrow--prev
+                                left: 1.2em
+                            &.splide__arrow--next
+                                right: 1.2em
+            .items
+                // display: flex
+                // justify-content: flex-start
+                // flex-wrap: wrap
+                // box-sizing: border-box
+                .item
+                    width: 31%
+                    margin-right: 3.5%
+                    // margin-bottom: 46px
+                    &:last-child
+                        // margin-bottom: inherit
+                    &:nth-child(2n)
+                        margin-left: 0
+                    &:nth-child(3n)
+                        margin-left: 0
+                        margin-right: 0
+                    .img
+                        // padding-top: 1 / 1 * 100%
+                        // margin-bottom: 16px
+                    .data
+                        .name
+                            // font-size: 16px
+                            // margin-bottom: 6px
+                        .price
+                            // font-size: 16px
+
+@media (min-width: 1200px)
+    .shop-wrapper
+        .shop
+            .header-section
+            .categories
+                .splide
+                    padding:
+                        left: 71px
+                        right: 71px
+                    .splide__track
+                        .splide__list
+                            .splide__slide
+                                .splide__banner
+                                    &:before
+                                    p
+                    .splide__arrows
+                        .splide__arrow
+                            // width: 1.2em
+                            // height: 1.2em
+                            &.splide__arrow--prev
+                                left: 2.8em
+                            &.splide__arrow--next
+                                right: 2.8em
+            .items
+                .item
+                    width: 23.5%
+                    margin-right: 2%
+                    &:last-child
+                    &:nth-child(2n)
+                        margin-left: 0
+                    &:nth-child(3n)
+                        margin-left: 0
+                        margin-right: 2%
+                    &:nth-child(4n)
+                        margin-right: 0
+                    .img
+                    .data
+                        .name
+                        .price
+
+@media (min-width: 1400px)
+    .shop-wrapper
+        .shop
+            .header-section
+            .categories
+                max-width: 1250px
+                margin:
+                    left: auto
+                    right: auto
+                .splide
+                    // padding:
+                        // left: 66px
+                        // right: 66px
+                    .splide__track
+                        .splide__list
+                            .splide__slide
+                                .splide__banner
+                                    &:before
+                                    p
+                    .splide__arrows
+                        .splide__arrow
+                            // width: 1.2em
+                            // height: 1.2em
+                            &.splide__arrow--prev
+                                // left: 1.2em
+                            &.splide__arrow--next
+                                // right: 1.2em
+            .items
+                .item
+                    &:last-child
+                    &:nth-child(2n)
+                    &:nth-child(3n)
+                    .img
+                    .data
+                        .name
+                        .price
+
+@media (min-width: 1600px)
+    .shop-wrapper
+        .shop
+            .header-section
+            .categories
+                .splide
+                    .splide__track
+                        .splide__list
+                            .splide__slide
+                                .splide__banner
+                                    height: 5.02vw
+                                    &:before
+                                    p
+                    .splide__arrows
+                        .splide__arrow
+                            &.splide__arrow--prev
+                            &.splide__arrow--next
+            .items
+                .item
+                    &:last-child
+                    &:nth-child(2n)
+                    &:nth-child(3n)
+                    .img
+                    .data
+                        .name
+                        .price
+
+// Product (single item sheet)
+.product-sheet-wrapper
+    position: relative
+    // &::before
+    //     position: absolute
+    //     content: ''
+    //     width: 100%
+    //     height: 260px
+    //     top: -80px
+    //     background-image: url('../img/back-icons.png')
+    //     background-size: cover
+    //     background-position: center
+    //     z-index: -1
+    &::after
+        content: ''
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        right: 0
+        z-index: -2
+        background-color: $babyBlue
+    .product-sheet
+        // padding-bottom: 30px
+        padding-bottom: 100px
+        position: relative
+        .breadcrumb
+            color: gray
+            margin-bottom: 28px
+            a
+                color: $black
+            span
+                color: rgba($gray, 0.6)
+        .product
+            .product-img
+                width: 100%
+                padding-top: 1 / 1 * 100%
+                height: 0
+                background-color: $green
+                border-radius: 5px
+                background-position: center
+                background-repeat: no-repeat
+                background-size: cover
+                margin-bottom: 28px
+            .product-data
+                h1
+                    @include font-bold
+                    font-size: 30px
+                    color: $black
+                    margin-bottom: 13px
+                p.price
+                    color: $gray
+                    font-size: 18px
+                    margin-bottom: 24px
+                p.desc
+                    color: rgba($gray, 0.8)
+                    font-size: 16px
+                    line-height: 160%
+                    margin-bottom: 24px
+                p.category
+                    font-size: 16px
+                    color: $gray
+                    margin-bottom: 27px
+                    span
+                        color: $black
+                .addToCart
+                    .quantity-wrap
+                        border: solid 1px rgba($gray, 0.5)
+                        display: flex
+                        justify-content: space-between
+                        align-items: center
+                        // border-radius: 46px
+                        border-radius: 4px
+                        padding: 6px 21px
+                        margin-bottom: 10px
+                        p
+                            color: rgba($gray, 0.7)
+                        .quantity
+                            width: 100%
+                            display: flex
+                            justify-content: flex-end
+                            align-items: center
+                            .minus
+                                cursor: pointer
+                                background-position: center
+                                background-size: contain
+                                background-repeat: no-repeat
+                                background-image: url('../img/arrow-left-icon.svg')
+                                width: 10px
+                                height: 10px
+                            .plus
+                                cursor: pointer
+                                background-position: center
+                                background-size: contain
+                                background-repeat: no-repeat
+                                background-image: url('../img/arrow-right-icon.svg')
+                                width: 10px
+                                height: 10px
+                            input
+                                display: inline-block
+                                width: 26px
+                                padding: 7px 0
+                                color: $gray
+                                border: none
+                                box-sizing: border-box
+                                text-align: center
+                                &::-webkit-outer-spin-button,
+                                &::-webkit-inner-spin-button
+                                    -webkit-appearance: none
+                                    margin: 0
+                                &[type=number]
+                                    -moz-appearance: textfield
+                    button
+                        background-color: $green
+                        color: $white
+                        font-weight: 700
+                        margin-left: 8px
+                        width: 100%
+
+@media (min-width: 768px)
+    .product-sheet-wrapper
+        min-height: 75vh
+        .product-sheet
+            padding-bottom: 60px
+            &::before
+            &::after
+            .breadcrumb
+                a
+                span
+            .product
+                display: flex
+                justify-content: space-between
+                .product-img
+                    width: 38%
+                    padding-top: 1 / 2.6 * 100%
+                .product-data
+                    width: 57%
+                    h1
+                    p.price
+                    p.desc
+                    p.category
+                        span
+                    .message
+                        img
+                        p
+                            width: 89%
+                    .addToCart
+                        .quantity-wrap
+                            p
+                            .quantity
+                                .minus
+                                .plus
+                                input
+                                    &::-webkit-outer-spin-button,
+                                    &::-webkit-inner-spin-button
+                                    &[type=number]
+                        button
+
+@media (min-width: 990px)
+    .product-sheet-wrapper
+        .product-sheet
+            &::before
+            &::after
+            .breadcrumb
+                a
+                span
+            .product
+                .product-img
+                .product-data
+                    h1
+                    p.price
+                    p.desc
+                    p.category
+                        span
+                    .message
+                        img
+                        p
+                            width: 90.5%
+                    .addToCart
+                        display: flex
+                        justify-content: space-between
+                        align-items: center
+                        .quantity-wrap
+                            width: 57.5%
+                            margin-bottom: 0
+                            padding: 5px 21px
+                            p
+                            .quantity
+                                .minus
+                                .plus
+                                input
+                                    &::-webkit-outer-spin-button,
+                                    &::-webkit-inner-spin-button
+                                    &[type=number]
+                        button
+                            width: 34%
+
+// Cart
+.cart-wrapper
+    padding-bottom: 38px
+    .cart
+        .products-wrapper
+            .header-section
+                margin-bottom: 12px
+            .message
+            .products
+                margin-bottom: 36px
+                .item
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+                    box-sizing: border-box
+                    position: relative
+                    padding-bottom: 20px
+                    margin-bottom: 23px
+                    border-bottom: solid 1px rgba($gray, 0.15)
+                    .close
+                        position: absolute
+                        top: 0
+                        right: 0
+                        background-image: url('../img/close-icon.svg')
+                        background-position: center
+                        background-repeat: no-repeat
+                        background-size: contain
+                        width: 15px
+                        height: 15px
+                        cursor: pointer
+                    .img
+                        width: 20%
+                        height: 0
+                        padding-top: 1 / 5 * 100%
+                        background-color: $lemon
+                        background-position: center
+                        background-size: cover
+                        background-repeat: no-repeat
+                        margin-right: 16px
+                        border-radius: 5px
+                    .data
+                        width: 60%
+                        h4
+                            color: $black
+                            // font-size: 18px
+                            font-size: 17px
+                            @include font-semi-bold
+                            margin-bottom: 3px
+                        .quantity-wrapper
+                            display: flex
+                            align-items: center
+                            p
+                                color: rgba($gray, 0.8)
+                                margin-right: 10px
+                                font-size: 15px
+                                // margin-bottom: 2px
+                            .quantity
+                                display: flex
+                                justify-content: flex-start
+                                align-items: center
+                                .minus,
+                                .plus
+                                    background-position: center
+                                    background-repeat: no-repeat
+                                    background-size: contain
+                                    width: 10px
+                                    height: 10px
+                                .minus
+                                    background-image: url('../img/arrow-left-icon.svg')
+                                .plus
+                                    background-image: url('../img/arrow-right-icon.svg')
+                                input
+                                    border: none
+                                    width: 32px
+                                    text-align: center
+                                    padding: 0
+                                    font-size: 15px
+                    .total
+                        // align-self: flex-end
+                        align-self: center
+                        width: 20%
+                        padding-top: 20px
+                        p
+                            font-size: 15px
+                            text-align: right
+        .pricing-wrapper
+            .header-section
+            .coupon
+                box-sizing: border-box
+                border: solid 1px rgba($gray, 0.15)
+                border-radius: 5px
+                padding: 18px 20px
+                margin-bottom: 16px
+                .header
+                    margin-bottom: 17px
+                    p
+                        font-size: 15px
+                    .toggler
+                input
+                    margin-bottom: 12px
+                    width: 100%
+                    padding: 8px 15px
+                button
+                    width: 100%
+                    padding:
+                        top: 10px
+                        bottom: 10px
+                    background-color: $lemon
+            .date
+                box-sizing: border-box
+                border: solid 1px rgba($gray, 0.15)
+                border-radius: 5px
+                padding: 22px 20px
+                margin-bottom: 16px
+                .header
+                    margin-bottom: 17px
+                    p
+                        font-size: 15px
+                input //date
+                    width: 100%
+                .item
+                    margin-bottom: 18px
+                    &:last-child
+                        margin-bottom: 0
+                    label
+                        display: block
+                        font-size: 15px
+                        font-weight: 700
+                        margin-bottom: 8px
+                    input
+                        padding: 6px 10px
+                        font-size: 15px
+                    select
+                        width: 100%
+                        font-size: 15px
+                        option
+            .totals
+                border: solid 1px rgba($gray, 0.15)
+                background-color: transparent
+                border-radius: 5px
+                font-size: 15px
+                color: rgba($gray, 0.85)
+                margin-bottom: 16px
+                .total-title
+                    color: $black
+                    @include font-semi-bold
+                .subtotal
+                    box-sizing: border-box
+                    padding: 18px
+                    border-bottom: solid 1px rgba($gray, 0.15)
+                    .a-row
+                        display: flex
+                        justify-content: space-between
+                        p
+                .delivery
+                    box-sizing: border-box
+                    padding: 18px
+                    .total-title
+                        margin-bottom: 14px
+                    p
+                    .a-row
+                        display: flex
+                        justify-content: space-between
+                        margin-bottom: 8px
+                        &:last-child
+                            margin-bottom: 0
+                        div
+                            display: flex
+                            align-items: center
+                            flex-wrap: wrap
+                            input
+                                margin-right: 10px
+                            p
+                            button.change-delivery
+                                width: auto
+                                font-size: 11px
+                                padding: 7px 12px
+                                color: $white
+                                font-weight: 700
+                                background-color: $green
+                .total
+                    box-sizing: border-box
+                    padding: 18px
+                    border-top: solid 1px rgba($gray, 0.15)
+                    font-size: 16px
+                    .a-row
+                        display: flex
+                        justify-content: space-between
+                        div
+                            p
+            button.process-button
+                width: 100%
+                padding: 9px 0px
+                text-align: center
+                background-color: $green
+                font-weight: 700
+                color: white
+
+@media (min-width: 768px)
+    .cart-wrapper
+        padding-bottom: 72px
+        .cart
+            display: flex
+            justify-content: space-between
+            .products-wrapper
+                width: 55%
+                .header-section
+                    margin-bottom: 0
+                .message
+                .products
+                    .item
+                        .close
+                        .img
+                        .data
+                            h4
+                            .quantity-wrapper
+                                p
+                                .quantity
+                                    .minus,
+                                    .plus
+                                    .minus
+                                    .plus
+                                    input
+                                        &::-webkit-outer-spin-button,
+                                        &::-webkit-inner-spin-button
+                                            -webkit-appearance: none
+                                            margin: 0
+                                        &[type=number]
+                                            -moz-appearance: textfield
+                        .total
+                            p
+            .pricing-wrapper
+                width: 40%
+                .header-section
+                .coupon
+                    .header
+                        p
+                        .toggler
+                    input
+                    button
+                .date
+                    .header
+                        p
+                    input //date
+                .totals
+                    .total-title
+                    .subtotal
+                        .a-row
+                            p
+                    .delivery
+                        .total-title
+                        p
+                        .a-row
+                            &:last-child
+                            div
+                                input
+                                p
+                                button.change-delivery
+                    .total
+                        .a-row
+                            div
+                                p
+                button.process-button
+
+@media (min-width: 1200px)
+    .cart-wrapper
+        .cart
+            .products-wrapper
+                width: 60%
+                .header-section
+                .message
+                .products
+                    .item
+                        .close
+                            padding-top: 10px
+                        .img
+                            width: 15%
+                            padding-top: 0.75 / 5 * 100%
+                            // margin-right: 14px
+                            // margin-right: 12px
+                            margin-right: 4px
+                        .data
+                            h4
+                            .quantity-wrapper
+                                p
+                                .quantity
+                                    .minus,
+                                    .plus
+                                    .minus
+                                    .plus
+                                    input
+                        .total
+                            p
+            .pricing-wrapper
+                width: 35%
+                .header-section
+                .coupon
+                    .header
+                        p
+                        .toggler
+                    input
+                    button
+                .date
+                    .header
+                        p
+                    input //date
+                .totals
+                    .total-title
+                    .subtotal
+                        .a-row
+                            p
+                    .delivery
+                        .total-title
+                        p
+                        .a-row
+                            &:last-child
+                            div
+                                input
+                                p
+                                button.change-delivery
+                    .total
+                        .a-row
+                            div
+                                p
+                button.process-button
+
+.resume-wrapper
+    padding-bottom: 38px
+    .resume
+        .billing-data-wrapper
+            margin-bottom: 42px
+            .header-section
+                margin-bottom: 12px
+            .data-wrapper
+                .item
+                    margin-bottom: 24px
+                    label
+                        width: 100%
+                    input
+                        margin-top: 8px
+                        width: 100%
+                    select
+                        margin-top: 8px
+                        width: 100%
+        .pricing-wrapper
+            .header-section
+            .products
+                margin-bottom: 36px
+                .item
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+                    box-sizing: border-box
+                    position: relative
+                    margin-bottom: 16px
+                    .img
+                        width: 20%
+                        height: 0
+                        padding-top: 1 / 5 * 100%
+                        background-color: $lemon
+                        background-position: center
+                        background-size: cover
+                        background-repeat: no-repeat
+                        margin-right: 16px
+                        border-radius: 5px
+                    .data
+                        width: 60%
+                        h4
+                            color: $black
+                            // font-size: 18px
+                            font-size: 17px
+                            @include font-semi-bold
+                            margin-bottom: 6px
+                        .quantity-wrapper
+                            .quantity
+                                p
+                                    color: rgba($gray, 0.7)
+                                    font-size: 15px
+                    .total
+                        align-self: flex-end
+                        width: 20%
+                        padding-bottom: 14px
+                        p
+                            font-size: 15px
+                            text-align: right
+            .totals
+                border: solid 1px rgba($gray, 0.15)
+                background-color: rgba($gray, 0.04)
+                border-radius: 5px
+                font-size: 15px
+                color: rgba($gray, 0.85)
+                margin-bottom: 16px
+                .total-title
+                    color: $black
+                    @include font-semi-bold
+                .subtotal
+                    box-sizing: border-box
+                    padding: 18px
+                    border-bottom: solid 1px rgba($gray, 0.15)
+                    .a-row
+                        display: flex
+                        justify-content: space-between
+                        p
+                .delivery
+                    box-sizing: border-box
+                    padding: 18px
+                    .total-title
+                        margin-bottom: 14px
+                    p
+                    .a-row
+                        display: flex
+                        justify-content: space-between
+                        margin-bottom: 8px
+                        &:last-child
+                            margin-bottom: 0
+                        div
+                            display: flex
+                            align-items: center
+                            flex-wrap: wrap
+                            input
+                                margin-right: 10px
+                            p
+                            button.change-delivery
+                                width: auto
+                                font-size: 11px
+                                padding: 7px 12px
+                                color: $white
+                                background-color: $green
+                .total
+                    box-sizing: border-box
+                    padding: 18px
+                    border-top: solid 1px rgba($gray, 0.15)
+                    font-size: 16px
+                    .a-row
+                        display: flex
+                        justify-content: space-between
+                        div
+                            p
+            button.process-button
+                width: 100%
+                padding: 9px 0px
+                text-align: center
+                background-color: $gray
+                color: white
+
+@media (min-width: 768px)
+    .resume-wrapper
+        .resume
+            display: flex
+            justify-content: space-between
+            .billing-data-wrapper
+                width: 55%
+                .header-section
+                .data-wrapper
+                    .item
+                        label
+                        input
+                        select
+            .pricing-wrapper
+                width: 40%
+                .header-section
+                .products
+                    .item
+                        .img
+                        .data
+                            h4
+                            .quantity-wrapper
+                                .quantity
+                                    p
+                        .total
+                            p
+                .totals
+                    .total-title
+                    .subtotal
+                        .a-row
+                            p
+                    .delivery
+                        .total-title
+                        p
+                        .a-row
+                            &:last-child
+                            div
+                                input
+                                p
+                                button.change-delivery
+                    .total
+                        .a-row
+                            div
+                                p
+                button.process-button
+
+@media (min-width: 1200px)
+    .resume-wrapper
+        .resume
+            .billing-data-wrapper
+                width: 60%
+                .header-section
+                .data-wrapper
+                    .item
+                        label
+                        input
+                        select
+            .pricing-wrapper
+                width: 35%
+                .header-section
+                .products
+                    .item
+                        .img
+                        .data
+                            h4
+                            .quantity-wrapper
+                                .quantity
+                                    p
+                        .total
+                            p
+                .totals
+                    .total-title
+                    .subtotal
+                        .a-row
+                            p
+                    .delivery
+                        .total-title
+                        p
+                        .a-row
+                            &:last-child
+                            div
+                                input
+                                p
+                                button.change-delivery
+                    .total
+                        .a-row
+                            div
+                                p
+                button.process-button
+
+.auth-wrapper
+    .auth
+        .menu
+            margin-bottom: 42px
+            .header-section
+                h3
+            .body
+                button
+                    width: 100%
+                    text-align: center
+                    @include font-semi-bold
+                    background-color: $gray
+                    color: white
+                    margin-bottom: 10px
+                    &.active
+                        background-color: $lemon
+                        color: $gray
+        .content
+            padding-bottom: 38px
+            .header-section
+                margin-bottom: 8px
+                h3
+            .body
+                .item
+                    margin-bottom: 23px
+                    label
+                        color: $gray
+                        font-size: 15px
+                    input
+                        margin-top: 8px
+                        width: 100%
+                    select
+                        margin-top: 8px
+                        width: 100%
+                button
+                    width: 100%
+                    text-align: center
+                    background-color: $gray
+                    color: white
+
+@media (min-width: 768px)
+    .auth-wrapper
+        .auth
+            display: flex
+            justify-content: space-between
+            .menu
+                width: 40%
+                .header-section
+                    margin-bottom: 8px
+                    h3
+                .body
+                    button
+                        &.active
+            .content
+                width: 55%
+                .header-section
+                    margin-bottom: 8px
+                    h3
+                .body
+                    .item
+                        label
+                        input
+                        select
+                    button
+
+@media (min-width: 1200px)
+    .auth-wrapper
+        .auth
+            .menu
+                width: 30%
+                .header-section
+                    h3
+                .body
+                    button
+                        &.active
+            .content
+                width: 65%
+                .header-section
+                    h3
+                .body
+                    .item
+                        label
+                        input
+                        select
+                    button
+
+footer
+    background-color: $black
+    text-align: center
+    padding-top: 40px
+    padding-bottom: 32px
+    box-sizing: border-box
+    position: relative
+    .footer-inner
+        .items
+            margin-bottom: 32px
+            .item
+                width: 100%
+                color: $white
+                margin-bottom: 18px
+                &:last-child
+                    margin-bottom: 0
+                p
+                    line-height: 120%
+                a
+                    color: $gold
+        .logo
+            img
+                width: 30%
+                margin: auto
+
+
+@media (min-width: 500px)
+    footer
+        .footer-inner
+
+@media (min-width: 768px)
+    footer
+        .footer-inner
+            display: flex
+            padding-left: 34px
+            padding-right: 34px
+            justify-content: space-between
+            .items
+                width: 75%
+                margin-bottom: 0
+                text-align: left
+                display: flex
+                flex-wrap: wrap
+                .item
+                    width: 33.3%
+                    width: 30%
+                    p
+                        margin-bottom: 6px
+                        &:last-child
+                            margin-bottom: 0
+                    a
+            .logo
+                width: 15%
+                margin-right: 0
+                text-align: right
+                position: relative
+                img
+                    margin-right: 0
+                    width: 100%
+                    position: absolute
+                    right: 0
+                    top: -10px
+
+@media (min-width: 990px)
+    footer
+        .footer-inner
+            justify-content: space-between
+            padding-left: 54px
+            padding-right: 54px
+            .items
+                .item
+                    width: 30%
+            .logo
+                img
+                    top: -56px
+
+@media (min-width: 1200px)
+    footer
+        .footer-inner
+            // padding-bottom: 42px
+            padding-left: 78px
+            padding-right: 78px
+
+@media (min-width: 1400px)
+    footer
+        .footer-inner
+            padding-left: 0
+            padding-right: 0
+            margin-left: auto
+            margin-right: auto
+            max-width: 1100px
+
+@media (min-width: 1600px)
+    footer
+
+.flow-success-order
+    .body
+        p.subtitle
+            font-weight: 600
+            color: $black !important
+            margin-bottom: 16px
+        .order
+            margin-bottom: 38px !important
+            .item
+                // display: block
+                display: flex
+                justify-content: flex-start
+                align-items: center
+                box-sizing: border-box
+                position: relative
+                margin-bottom: 16px
+                width: 100%
+                box-sizing: border-box
+                .img
+                    width: 15%
+                    height: 0
+                    padding-top: 15%
+                    background-color: #D4DE0C
+                    background-position: center
+                    background-size: cover
+                    background-repeat: no-repeat
+                    margin-right: 16px
+                    border-radius: 5px
+                .data
+                    width: 75%
+                    h4
+                        color: #3F190E
+                        font-size: 17px
+                        font-weight: 600
+                        margin-bottom: 6px
+                    .details
+                        display: flex
+                        width: 100%
+                        justify-content: space-between
+                        p
+                            margin: 0
+        .deliverydata
+            border-radius: 5px
+            padding: 20px 22px
+            box-sizing: border-box
+            background-color: $lightGreen
+
+@media (min-width: 660px)
+    .flow-success-order
+        width: 470px
+        .body
+            .subtitle
+            .order
+                .item
+                    .img
+                    .data
+                        h4
+                        .details
+
+.mapouter
+    background-color: $black
+    position: relative
+    text-align: right
+    width: 100%
+    height: 414px
+    .gmap_canvas
+        overflow: hidden
+        background: none !important
+        width: 100%
+        height: 414px
